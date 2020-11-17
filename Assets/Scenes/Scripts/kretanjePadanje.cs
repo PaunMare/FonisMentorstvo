@@ -5,7 +5,8 @@ using UnityEngine;
 public class kretanjePadanje : MonoBehaviour
 {
 
-    public Vector2 brzina = new Vector2(50, 0);
+    public float moveSpeed = 30f;
+    
 
 
     // Start is called before the first frame update
@@ -15,10 +16,10 @@ public class kretanjePadanje : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float inputX = Input.GetAxis("Horizontal");
-        Vector3 kretanje = new Vector3(brzina.x*inputX,0);
-        transform.Translate(kretanje);
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+        transform.position += movement * Time.deltaTime * moveSpeed;
+
     }
 }
