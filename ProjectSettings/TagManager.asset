@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Voce
+  - Skor
   layers:
   - Default
   - TransparentFX

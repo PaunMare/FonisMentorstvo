@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+
+
 
 public class kretanjePadanje : MonoBehaviour
 {
+
+    
 
     public float moveSpeed = 30f;
     public float horizontalMove=0f;
@@ -12,9 +18,12 @@ public class kretanjePadanje : MonoBehaviour
     public SpriteRenderer player;
     public Animator animator;
 
+   
     private void Awake()
     {
         player.sprite = right;
+
+        
     }
 
 
