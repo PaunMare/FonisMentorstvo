@@ -9,7 +9,9 @@ using UnityEngine.UI;
 public class kretanjePadanje : MonoBehaviour
 {
 
-    
+    public Text tajmer;
+    float pocetnoV=60;
+    static float trenutnoV = 0;
 
     public float moveSpeed = 30f;
     public float horizontalMove=0f;
@@ -21,20 +23,25 @@ public class kretanjePadanje : MonoBehaviour
    
     private void Awake()
     {
-        player.sprite = right;
-
         
-    }
 
+
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        trenutnoV = pocetnoV;  
     }
+
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        trenutnoV -= 1 * Time.deltaTime;
+        tajmer.text = trenutnoV.ToString("0");
+        if (trenutnoV <= 0) {
+            trenutnoV = 0;
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
