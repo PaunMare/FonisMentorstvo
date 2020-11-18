@@ -136,9 +136,10 @@ GameObject:
   - component: {fileID: 187386780}
   - component: {fileID: 187386781}
   - component: {fileID: 187386784}
-  m_Layer: 0
-  m_Name: Blue_Idle
-  m_TagString: Untagged
+  - component: {fileID: 187386785}
+  m_Layer: 8
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,7 +168,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187386779}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
@@ -220,7 +221,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0d3616ff59af1f34fa622e45c2967ca9, type: 3}
+  m_Sprite: {fileID: 1581865290986469503, guid: 1be9249e75708d441aedc8007713dac2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -238,7 +239,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187386779}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.07, y: -2.79, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
@@ -258,9 +259,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  horizontalMove: 0
   left: {fileID: 21300000, guid: 5f67c0ce16f2ff443acfcd7ead5b6846, type: 3}
   right: {fileID: 21300000, guid: 1a204486d7bbab24792097998d171d5e, type: 3}
   player: {fileID: 187386782}
+  animator: {fileID: 187386785}
+--- !u!95 &187386785
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187386779}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 005d2e948e1915c42ac0b35078e463a9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &911800729
 GameObject:
   m_ObjectHideFlags: 0
