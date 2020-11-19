@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2a74de7a62b180643ade690ecec901cb
   - enabled: 1
     path: Assets/Scenes/Padalica.unity
     guid: 0fd881ca8dec7fb47851451eb133840b
+  - enabled: 0
+    path: Assets/Scenes/KrajPrveIgre.unity
+    guid: fa4f1070528b5004fba72e82b714eae9
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

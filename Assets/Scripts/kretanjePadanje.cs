@@ -48,7 +48,7 @@ public class kretanjePadanje : MonoBehaviour
             trenutnoV = 0;
             stringovi[1] = score.text;
             go.GetComponent<Text>().text = stringovi[0] + '$' + stringovi[1];
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
         }
     }
     // Update is called once per frame
