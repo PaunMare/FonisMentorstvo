@@ -7,6 +7,8 @@ TagManager:
   - Voce
   - Skor
   - SadINIkad
+  - MemoryCard
+  - AudioScore
   layers:
   - Default
   - TransparentFX

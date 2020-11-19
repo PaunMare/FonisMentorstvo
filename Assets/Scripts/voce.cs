@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class voce : MonoBehaviour
 {
     Text skor;
-    
+    AudioSource audioSource; 
     int poeni = 0;
     public float speed = 5f;
     private Rigidbody2D rb;
@@ -19,6 +19,7 @@ public class voce : MonoBehaviour
     private void Awake()
     {
         skor = GameObject.FindGameObjectWithTag("Skor").GetComponent<Text>();
+        audioSource = GameObject.FindGameObjectWithTag("AudioScore").GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class voce : MonoBehaviour
             poeni = poeni + 10;
             skor.text = poeni.ToString();
             Destroy(this.gameObject);
+            audioSource.Play();
         }
     }
     // Update is called once per frame
