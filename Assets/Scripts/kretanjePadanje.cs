@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 
@@ -9,10 +10,13 @@ using UnityEngine.UI;
 public class kretanjePadanje : MonoBehaviour
 {
 
+    string ime;
+    string[] stringovi;
+    private GameObject go;
     public Text tajmer;
     float pocetnoV=60;
     static float trenutnoV = 0;
-
+    public Text score;
     public float moveSpeed = 30f;
     public float horizontalMove=0f;
     public Sprite left, right;
@@ -23,9 +27,10 @@ public class kretanjePadanje : MonoBehaviour
    
     private void Awake()
     {
-        
-
-
+        go = GameObject.FindGameObjectWithTag("SadINIkad");
+        stringovi = go.GetComponent<Text>().text.Split('$');
+        ime = stringovi[0];
+        Debug.Log(ime);
     }
 
     // Start is called before the first frame update
@@ -41,6 +46,9 @@ public class kretanjePadanje : MonoBehaviour
         tajmer.text = trenutnoV.ToString("0");
         if (trenutnoV <= 0) {
             trenutnoV = 0;
+            stringovi[1] = score.text;
+            go.GetComponent<Text>().text = stringovi[0] + '$' + stringovi[1];
+            SceneManager.LoadScene(0);
         }
     }
     // Update is called once per frame
