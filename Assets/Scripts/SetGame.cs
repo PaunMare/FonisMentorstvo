@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class SetGame : MonoBehaviour
 {
-
+    AudioSource audioSource; 
     public static int SCORE = 420;
 
     #region Fields
@@ -47,12 +47,18 @@ public class SetGame : MonoBehaviour
         }
         return objects;
     }
+    private void Awake()
+    {
+        audioSource = GameObject.FindGameObjectWithTag("AudioScore").GetComponent<AudioSource>();
+        audioSource.mute = true;
+    }
 
     void Start(){
         GetButtons(); 
         AddOnClick(); 
         cardImages = Randomize(cardImages);
-        gameGuesses = cardImages.Count / 2; 
+        gameGuesses = cardImages.Count / 2;
+        audioSource.mute = false;
     }
 
     void GetButtons(){ // uzmemo dugmice sa scene i dodamo ih u listu, kao i svakom dodamo pozadinu FONIS
@@ -71,6 +77,7 @@ public class SetGame : MonoBehaviour
         }
     }
 
+    string pom = "";
     void ClickButton(){ 
         string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
 
@@ -79,8 +86,9 @@ public class SetGame : MonoBehaviour
             firstGuessIndex = int.Parse(name);
             firstGuesCard = cardImages[firstGuessIndex].name;
             buttons[firstGuessIndex].image.sprite = cardImages[firstGuessIndex];
+            pom = name;
 
-        }else if(!secondGuess){
+        }else if(!secondGuess && !(name.Equals(pom))){
             secondGuess = true;
             secondGuessIndex = int.Parse(name);
             secondGuessCard = cardImages[secondGuessIndex].name;
@@ -106,8 +114,8 @@ public class SetGame : MonoBehaviour
 
             GameFinished();
         } else {
-            yield return new WaitForSeconds(.1f);
-
+            audioSource.Play();
+            yield return new WaitForSeconds(.4f);
             buttons[firstGuessIndex].image.sprite = backgroundImage;
             buttons[secondGuessIndex].image.sprite = backgroundImage;
         }
