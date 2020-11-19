@@ -9,6 +9,7 @@ TagManager:
   - SadINIkad
   - MemoryCard
   - AudioScore
+  - MenuSound
   layers:
   - Default
   - TransparentFX

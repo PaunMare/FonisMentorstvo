@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-
+    AudioSource audioSource;
     public InputField ime;
     public GameObject go;
     Text neki;
@@ -14,6 +14,8 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         neki = go.GetComponent<Text>();
+        //neki = GameObject.FindGameObjectWithTag("Skor").GetComponent<Text>();
+        audioSource = GameObject.FindGameObjectWithTag("MenuSound").GetComponent<AudioSource>();
     }
 
 
