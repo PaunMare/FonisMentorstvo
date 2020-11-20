@@ -87,7 +87,7 @@ public class SetGame : MonoBehaviour
             firstGuess = true;
             firstGuessIndex = int.Parse(name);
             firstGuesCard = cardImages[firstGuessIndex].name;
-            buttons[firstGuessIndex].image.sprite = cardImages[firstGuessIndex];
+            Invoke( buttons[firstGuessIndex].image.sprite = cardImages[firstGuessIndex];
             pom = name;
 
         }else if(!secondGuess && !(name.Equals(pom))) {
