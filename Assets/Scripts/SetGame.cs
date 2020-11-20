@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class SetGame : MonoBehaviour
 {
-    AudioSource audioSource; 
+    AudioSource audioSource, audioRotate; 
     public static int SCORE = 420;
 
     #region Fields
@@ -50,7 +50,7 @@ public class SetGame : MonoBehaviour
     private void Awake()
     {
         audioSource = GameObject.FindGameObjectWithTag("AudioScore").GetComponent<AudioSource>();
-        audioSource.mute = true;
+        audioRotate = GameObject.FindGameObjectWithTag("MenuSound").GetComponent<AudioSource>();
     }
 
     void Start(){
@@ -82,13 +82,16 @@ public class SetGame : MonoBehaviour
         string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
 
         if(!firstGuess){
+            if (audioRotate.enabled) audioRotate.Play();
+            else audioRotate.enabled = true;
             firstGuess = true;
             firstGuessIndex = int.Parse(name);
             firstGuesCard = cardImages[firstGuessIndex].name;
             buttons[firstGuessIndex].image.sprite = cardImages[firstGuessIndex];
             pom = name;
 
-        }else if(!secondGuess && !(name.Equals(pom))){
+        }else if(!secondGuess && !(name.Equals(pom))) {
+            audioRotate.Play();
             secondGuess = true;
             secondGuessIndex = int.Parse(name);
             secondGuessCard = cardImages[secondGuessIndex].name;
@@ -98,6 +101,8 @@ public class SetGame : MonoBehaviour
 
             StartCoroutine(CheckMatch());
         }
+
+
     }
 
     IEnumerator CheckMatch(){ // proverava da li se poklapaju (yield i interactable nzm sta su )
@@ -114,7 +119,9 @@ public class SetGame : MonoBehaviour
 
             GameFinished();
         } else {
-            audioSource.Play();
+            if (audioSource.enabled) audioSource.Play();
+            else audioSource.enabled = true;
+
             yield return new WaitForSeconds(.4f);
             buttons[firstGuessIndex].image.sprite = backgroundImage;
             buttons[secondGuessIndex].image.sprite = backgroundImage;
