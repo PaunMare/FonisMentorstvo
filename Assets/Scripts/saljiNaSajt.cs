@@ -18,7 +18,6 @@ public class saljiNaSajt : MonoBehaviour
         Application.OpenURL("https://unity-testing-49c5b.web.app/");
         Application.OpenURL("https://aplauz.fonis.rs");
         SceneManager.LoadScene(0);
-
     }
     
     public void Submit()

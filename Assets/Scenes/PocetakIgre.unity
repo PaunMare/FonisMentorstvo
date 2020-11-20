@@ -537,11 +537,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Kraj prve igre!
+  m_Text: 'Prva igra pocinje!
 
 
-    Sledeca igra je igra memorije. Potrudi se da u sto
-    manje pokusaja pogodis sve identicne karte!'
+    Sakupi sto vise voca u roku od 1 min!'
 --- !u!222 &1355782806
 CanvasRenderer:
   m_ObjectHideFlags: 0
