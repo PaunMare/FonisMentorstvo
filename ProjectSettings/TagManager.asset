@@ -10,6 +10,7 @@ TagManager:
   - MemoryCard
   - AudioScore
   - MenuSound
+  - SoundDone
   layers:
   - Default
   - TransparentFX

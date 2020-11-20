@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class SetGame : MonoBehaviour
 {
-    AudioSource audioSource, audioRotate; 
+    AudioSource audioSource, audioRotate, audioDone; 
     public static int SCORE = 420;
 
     #region Fields
@@ -51,6 +51,7 @@ public class SetGame : MonoBehaviour
     {
         audioSource = GameObject.FindGameObjectWithTag("AudioScore").GetComponent<AudioSource>();
         audioRotate = GameObject.FindGameObjectWithTag("MenuSound").GetComponent<AudioSource>();
+        audioDone = GameObject.FindGameObjectWithTag("SoundDone").GetComponent<AudioSource>();
     }
 
     void Start(){
@@ -68,15 +69,19 @@ public class SetGame : MonoBehaviour
             buttons.Add(objects[i].GetComponent<Button>());
             buttons[i].image.sprite = backgroundImage;
         }
-    } 
+    }
 
 
-    void AddOnClick(){ // dodeljujemo metodu dugmicima 
-        for(int i =0; i<buttons.Count; i++){
-            buttons[i].onClick.AddListener(()=> ClickButton());
+    void AddOnClick() { // dodeljujemo metodu dugmicima 
+        for (int i = 0; i < buttons.Count; i++) {
+            buttons[i].onClick.AddListener(() => ClickButton());
         }
     }
 
+    IEnumerator ChangeImage(Button button,int imageIndex){
+        yield return new WaitForSeconds(0.19f);
+        button.image.sprite = cardImages[imageIndex];
+    }
     string pom = "";
     void ClickButton(){ 
         string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
@@ -87,7 +92,8 @@ public class SetGame : MonoBehaviour
             firstGuess = true;
             firstGuessIndex = int.Parse(name);
             firstGuesCard = cardImages[firstGuessIndex].name;
-            Invoke( buttons[firstGuessIndex].image.sprite = cardImages[firstGuessIndex];
+            //buttons[firstGuessIndex].image.sprite = cardImages[firstGuessIndex];
+            StartCoroutine(ChangeImage(buttons[firstGuessIndex], firstGuessIndex));
             pom = name;
 
         }else if(!secondGuess && !(name.Equals(pom))) {
@@ -95,8 +101,8 @@ public class SetGame : MonoBehaviour
             secondGuess = true;
             secondGuessIndex = int.Parse(name);
             secondGuessCard = cardImages[secondGuessIndex].name;
-            buttons[secondGuessIndex].image.sprite = cardImages[secondGuessIndex];
-
+            //buttons[secondGuessIndex].image.sprite = cardImages[secondGuessIndex];
+            StartCoroutine(ChangeImage(buttons[secondGuessIndex], secondGuessIndex));
             guessCounter++;
 
             StartCoroutine(CheckMatch());
@@ -109,6 +115,8 @@ public class SetGame : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         if (firstGuesCard.Equals(secondGuessCard)){
+            if (audioDone.enabled) audioDone.Play();
+            else audioDone.enabled = true;
             yield return new WaitForSeconds(.5f);
 
             buttons[firstGuessIndex].image.color = new Color(0,0,0,0);
