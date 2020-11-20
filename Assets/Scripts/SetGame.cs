@@ -140,7 +140,11 @@ public class SetGame : MonoBehaviour
         firstGuess = secondGuess = false;
     }
 
-    GameObject scoreText; 
+    GameObject scoreText;
+
+    public void Promeni() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
     void GameFinished(){ //proverava da li je kraj igre
         correctGuessCounter++;
@@ -163,10 +167,10 @@ public class SetGame : MonoBehaviour
             int totalScore = int.Parse(nameAndScore[1]);
 
             totalScore += SCORE;
-
+            nameAndScore[1] = totalScore.ToString();
             scoreText.GetComponent<Text>().text = nameAndScore[0] + '$' + nameAndScore[1];
             UnityEngine.Debug.Log(totalScore.ToString()+" "+nameAndScore[0]);
-            //SceneManager.LoadScene(4);
+            Invoke("Promeni", 2f);
         }
     }
 }

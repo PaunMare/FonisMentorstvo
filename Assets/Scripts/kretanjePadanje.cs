@@ -48,9 +48,15 @@ public class kretanjePadanje : MonoBehaviour
             trenutnoV = 0;
             stringovi[1] = score.text;
             go.GetComponent<Text>().text = stringovi[0] + '$' + stringovi[1];
-            SceneManager.LoadScene(2);
+            Invoke("PromeniScenu", 1f);
         }
     }
+
+    public void PromeniScenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
