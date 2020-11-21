@@ -626,7 +626,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
-    m_FontSize: 32
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -662,8 +662,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 651, y: 307}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 590, y: 314.2}
+  m_SizeDelta: {x: 160, y: 44.342163}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1374056532
 GameObject:
@@ -1049,8 +1049,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 373.0001, y: 251.00002}
-  m_SizeDelta: {x: 430, y: 100}
+  m_AnchoredPosition: {x: 394, y: 248.00003}
+  m_SizeDelta: {x: 202.31909, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2019772516
 MonoBehaviour:
@@ -1085,7 +1085,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Preostalo sekundi: '
+  m_Text: 'Tajmer:'
 --- !u!222 &2019772517
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1128,7 +1128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 230.0001, y: 313}
+  m_AnchoredPosition: {x: 420.16, y: 314.2}
   m_SizeDelta: {x: 150, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108020821
@@ -1207,8 +1207,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 651, y: 248}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 590, y: 248.00003}
+  m_SizeDelta: {x: 160, y: 44.34216}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2111904481
 CanvasRenderer:
@@ -1240,7 +1240,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
-    m_FontSize: 32
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0

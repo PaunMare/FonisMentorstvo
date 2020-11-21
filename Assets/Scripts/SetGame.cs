@@ -151,14 +151,14 @@ public class SetGame : MonoBehaviour
 
         if (correctGuessCounter == gameGuesses){
             if (guessCounter < 13) SCORE = 420;
-            else if (guessCounter < 14) SCORE -= 30;
-            else if (guessCounter < 15) SCORE -= 60;
-            else if (guessCounter < 16) SCORE -= 90;
-            else if (guessCounter < 17) SCORE -= 120;
-            else if (guessCounter < 18) SCORE -= 150;
-            else if (guessCounter < 19) SCORE -= 180;
-            else if (guessCounter < 20) SCORE -= 210;
-            else SCORE -= 240;
+            else if (guessCounter < 14) SCORE -= 25;
+            else if (guessCounter < 15) SCORE -= 50;
+            else if (guessCounter < 16) SCORE -= 75;
+            else if (guessCounter < 17) SCORE -= 100;
+            else if (guessCounter < 18) SCORE -= 125;
+            else if (guessCounter < 19) SCORE -= 150;
+            else if (guessCounter < 20) SCORE -= 175;
+            else SCORE -= 200;
 
             scoreText = GameObject.FindGameObjectWithTag("SadINIkad");
 
