@@ -15,7 +15,7 @@ public class voce : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 screenBounds;
 
-
+    
     private void Awake()
     {
         skor = GameObject.FindGameObjectWithTag("Skor").GetComponent<Text>();
